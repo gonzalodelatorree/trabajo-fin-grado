@@ -1,0 +1,20 @@
+{
+  "name": "api-nomascortes",
+  "version": "1.0.0",
+  "description": "Api creada para el manejo de datos del proyecto NoMasCortes (Trabajo de Fin de Grado)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Gonzalo de la Torre",
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.18.1",
+    "nodemon": "^2.0.19"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "express-myconnection": "^1.0.4",
+    "mysql2": "^2.3.3"
+  }
+}

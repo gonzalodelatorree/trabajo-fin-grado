@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+
+{% block linksMapa %}
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+crossorigin=""/>
+
+<script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+crossorigin=""></script>
+
+<script src="../js/mapa.js" defer></script>
+{% endblock %}
+
+{% block estilos %}
+<link rel="stylesheet" href="../css/estilo_datos.css">
+{% endblock %}
+
+{% block contenido %}
+
+<h3>Últimos Cortes de Luz</h3>
+
+{% if logged == 'admin' %}
+<div class="formulario">
+  <form action="datos.php" method="POST">
+    <label for="fechaInicio">Intervalo desde: </label>
+    <input id="fechaInicio" name="fechaInicio" type="datetime-local" required>
+
+    <label for="fechaFin"> hasta: </label>
+    <input id="fechaFin" name="fechaFin" type="datetime-local" required>
+
+    <label for="dispositivoID"> Dispositivo: </label>
+    <select id="dispositivoID" name="dispositivoID">
+      <option disabled selected>Dispositivo ID</option>
+      {% for dispositivo in dispositivos %}
+      <option value="{{ dispositivo.getIdDispositivo() }}">Dispositivo {{ dispositivo.getIdDispositivo() }}</option>
+      {% endfor %}
+    </select>
+    <input type="submit" value="Filtrar">
+  </form>
+
+  {% if fechaInicio != 'nulo' and fechaFin != 'nulo' %}
+    <h6>Mostrando desde {{ fechaInicio }} hasta {{ fechaFin }}
+
+    {% if dispositivoMostrado != 'nulo' %}
+    , dispositivo {{ dispositivoMostrado }}
+    {% endif %}
+
+    </h6>
+  {% else %}
+    <h6>Mostrando cortes de la última semana</h6>
+  {% endif %}
+
+  <a class="csv" href="../datosMedidas/medidas.csv" download="medidas.csv"> CSV Todas las medidas</a>
+  {% if dispositivoMostrado != 'nulo' %}
+    <a class="csv" href="../datosMedidas/medidas{{ dispositivoMostrado }}.csv" download="medidas{{ dispositivoMostrado }}.csv">, CSV Medidas dispositivo {{ dispositivoMostrado }}</a>
+  {% endif %}
+
+</div>
+{% endif %}
+
+{% for corte in cortes %}
+  <div class="puntoMapa" data-latitud="{{ corte.getLatitud() }}" data-longitud="{{ corte.getLongitud() }}" data-dispositivo="{{ corte.getIdDispositivo() }}"></div>
+{% endfor %}
+
+<div class="cuerpo">
+  <div class="mapa">
+    <div id="map"></div>
+  </div>
+  
+  <div class="tabla">
+    <table>
+
+      <th>Id Dispositivo</th>
+      <th>Dirección</th>
+      <th>Hora Inicio</th>
+      <th>Hora Fin</th>
+      <th>Lat/Long</th>
+
+
+      {% for corte in cortes %}
+        <tr>
+          <td>{{ corte.getIdDispositivo() }}</td>
+          <td>{{ corte.getDireccion() }}</td>
+          <td>{{ corte.getInicioCorte() }}</td>
+          <td>{{ corte.getFinCorte() }}</td>
+          <td>{{ corte.getLatitud() }} {{ corte.getLongitud() }}</td>
+        </tr>
+        
+      {% endfor %}
+      </table>
+  </div>
+</div>
+{% endblock %}

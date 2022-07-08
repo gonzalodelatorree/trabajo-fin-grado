@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block estilos %}
+<link rel="stylesheet" href="../css/estilo_sobreNosotros.css">
+{% endblock %}
+
+{% block contenido %}
+<div>
+  <img src="../imagenes/landing_page.png">
+</div>
+
+<div class="cuerpo">
+  <div class="info">
+    <div class="sobreNosotros">
+      <h2>Sobre Nosotros</h2>
+    
+      <div class="parrafo">
+          <p>
+              Durante más de 10 años hay un problema en la zona Norte de Granada, y es que 
+              son constantes las quejas de los vecinos de la zona por los continuos y 
+              desesperantes cortes de suministro eléctrico.
+          </p>
+          <p>
+              Ni las instituciones ni la empresa de energía Endesa  proveen a los
+              vecinos de una solución. Por lo tanto, gracias al apoyo de varias asociaciones 
+              y movimientos sociales, se está consiguiendo hacer mumcho ruido. el tema de los
+              cortes de luz ha pasado a estar en el debate público y se ha avanzado de lo que
+              parecía una situación excepcional y local, a corroborar que es algo que ocurre 
+              por todo el estado español.
+          </p>
+          <p>
+              Desde la Escuela Técnica Superior de Ingenierías Informática y de Telecomunicaciones
+              (Universidad de Granada) se ha realizado un proyecto para automatizar la detección
+              de cortes de Luz.
+          </p>
+          <p>
+              Un dispositivo, creado mediante Arduino, detecta y almacena los cortes del 
+              suministro energético en las casas de los vecinos. Después, mediante una app Android,
+              se envían estos datos recogidos a un servidor que, finalmente, muestra de forma gráfica
+              los cortes de luz que se han producido en la zona.
+    
+          </p>
+      </div>
+    
+    </div>
+  </div>
+
+  <div class="contacto">
+    <h2>Contacto</h2>
+    <ul>
+      <li><h5><a href=:mailto:>granada@aphda.org</a></h5></li>
+    </ul>
+    
+    <h2>Colaboradores</h2>
+    <ul>
+      <li>Anaquerando</li>
+      <li>Parroquia de la Paz</li>
+      <li>Centro Socioeducativo Lestonnac</li>
+      <li>Asociación Pro Derechos Humanos de Andalucía en Granada</li>
+      <li>Delegación Pastoral Gitana Granada</li>
+    </ul>
+  </div>
+
+</div>
+{% endblock %}

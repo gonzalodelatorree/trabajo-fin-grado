@@ -1,0 +1,37 @@
+.login{
+    text-align: center;
+}
+
+button {   
+    background-color: #F15838;   
+    width: 30%;  
+    text-align: center;
+    color: white;   
+    padding: 15px;   
+    margin: 10px 0px;   
+    border: none;   
+    cursor: pointer;   
+}   
+
+form {   
+    border: 3px solid #f1f1f1;   
+    width: 50%;
+    display: inline-block;
+ }   
+input[type=text], input[type=password] {   
+    width: 100%;   
+    margin: 8px 0;  
+    padding: 12px 20px;   
+    display: inline-block;   
+    border: 2px solid #F15838;   
+    box-sizing: border-box;   
+ }  
+button:hover {   
+    opacity: 0.85;   
+ }
+     
+  
+.container {   
+    padding: 25px;   
+    background-color: #d6d6d6;
+ }

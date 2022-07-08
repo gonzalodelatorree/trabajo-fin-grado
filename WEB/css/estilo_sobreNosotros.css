@@ -1,0 +1,15 @@
+.sobreNosotros{
+    text-align: center;
+}
+
+.sobreNosotros .parrafo{
+    box-shadow: 10px 10px 8px 10px #888888;
+    width: 75%;
+    display: inline-block;
+}
+
+.sobreNosotros p{
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+}

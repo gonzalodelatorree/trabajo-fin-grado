@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PaginaAdmin"
+    android:background="#333333">
+
+    <TextView
+        android:id="@+id/textoTitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:fontFamily="@font/alata"
+        android:text="Administrador"
+        android:textColor="#F15838"
+        android:textSize="45dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="411dp"
+        android:layout_height="422dp"
+        android:layout_marginTop="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textoTitulo">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+
+            <TextView
+                android:id="@+id/idDispositivo"
+                android:layout_width="173dp"
+                android:layout_height="match_parent"
+                android:text="105"
+                android:textColor="#EAF2E3"
+                android:textSize="20dp">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/localizacion"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Dirección:"
+                android:textColor="#EAF2E3"
+                android:textSize="20dp">
+
+            </TextView>
+
+            <EditText
+                android:id="@+id/direccion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPostalAddress" />
+
+            <TextView
+                android:id="@+id/personaContacto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Persona de Contacto:"
+                android:textColor="#EAF2E3"
+                android:textSize="20dp">
+
+            </TextView>
+
+            <EditText
+                android:id="@+id/editPersonaContacto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Name" />
+
+            <TextView
+                android:id="@+id/telefonoContacto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Teléfono:"
+                android:textColor="#EAF2E3"
+                android:textSize="20dp">
+
+            </TextView>
+
+            <EditText
+                android:id="@+id/editTextoTelefono"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="phone" />
+
+            <TextView
+                android:id="@+id/emailContacto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Email:"
+                android:textColor="#EAF2E3"
+                android:textSize="20dp">
+
+            </TextView>
+
+            <EditText
+                android:id="@+id/editTextoEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textEmailAddress" />
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/actualizarDispositivo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="Actualizar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
+
+    <Button
+        android:id="@+id/botonAjustarHora"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="Ajustar Hora"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
+
+    <ImageButton
+        android:id="@+id/botonRecargarDatosDispositivo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@+id/botonAjustarHora"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2"
+        app:srcCompat="@android:drawable/ic_popup_sync" />
+
+    <Button
+        android:id="@+id/botonInicializarDispositivo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Inicializar Dispositivo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/botonRecargarDatosDispositivo" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

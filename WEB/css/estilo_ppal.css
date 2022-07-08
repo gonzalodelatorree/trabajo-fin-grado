@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@500&display=swap');
+
+* {
+  font-family: 'Dosis';
+}
+
+
+/* ---------------------HEADER---------------*/
+header .contenedor{
+  display: flex;
+  background-color: #333333;
+  align-items: center;
+  margin-bottom: 0px;
+}
+
+header h2{
+  flex: 20%;
+  text-align: center;
+  color: #F15838;
+}
+
+header a{
+  flex: 20%;
+  text-align: center;
+  font-size: 120%;
+  color: #F15838;
+  text-decoration: none;
+}
+
+header ul {
+  flex: 60%;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+header li{
+  display: inline;
+}
+
+header li a {
+  color: white;
+  text-align: center;
+  padding: 1%;
+  text-decoration: none;
+  font-size: 120%;
+}
+
+header li a:hover {
+  background-color: #111111;
+}
+
+/* ---------------------BODY---------------*/
+
+img{
+  margin-top: 3px;
+  margin-bottom: 3px;
+  
+  width: 100%;
+}
+
+body .cuerpo{
+  display: flex;
+}
+
+@media (max-width: 800px) {
+  body .cuerpo{
+    display: block;
+    text-align: center;
+    
+  }
+}
+
+body .info{
+  flex: 75%;
+}
+
+body img{
+  border:3px solid #333333;
+  margin-top: 0px;
+}
+
+body .contacto{
+  flex: 25%;
+}
+
+.contacto a{
+  color: #F15838;
+}
+
+/*--------------------FOOTER---------------*/
+footer{
+  background-color: #333333;
+}
+
+footer h6{
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  color: white;
+  height: 40px;
+  padding-top: 20px;
+}

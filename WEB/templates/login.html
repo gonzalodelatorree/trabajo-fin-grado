@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block estilos %}
+<link rel="stylesheet" href="../css/estilo_login.css">
+{% endblock %}
+
+{% block contenido %}
+<div class="login">
+
+    {% if logged == 'admin' %}
+        <h4>Has iniciado sesión como administrador</h4>
+    {% else %}
+        <h4>Inicio de sesión solo disponible para administradores.</h4>
+    {% endif %}
+
+
+    <form action="login.php" method="POST">  
+        <div class="container">
+            <input type="text" placeholder="Usuario" name="id_usuario" required>
+            <input type="password" placeholder="Contraseña" name="password" required>  
+            <button type="submit">Login</button> 
+        </div>   
+    </form>
+</div>
+{% endblock %}
